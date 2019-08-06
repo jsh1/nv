@@ -8,6 +8,11 @@
 #include <sys/stat.h>
 #include <sys/mount.h>
 
+#include <AssertMacros.h>
+#define require_action __Require_Action
+#define require_noerr __Require_noErr
+#define verify_noerr __Verify_noErr
+
 __private_extern__ u_int32_t volumeCapabilities(const char *path)
 {
     struct attrlist alist;
