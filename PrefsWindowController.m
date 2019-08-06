@@ -347,7 +347,9 @@
     [openPanel setTitle:NSLocalizedString(@"Select a folder",@"title of open panel for selecting a notes folder")];
     [openPanel setPrompt:NSLocalizedString(@"Select", @"title of open panel button to select a folder")];
     [openPanel setMessage:NSLocalizedString(@"Select the folder that Notational Velocity should use for reading and storing notes.",nil)];
-    [openPanel setDirectoryURL:[NSURL fileURLWithPath:startingDirectory]];
+    if (startingDirectory != nil) {
+      [openPanel setDirectoryURL:[NSURL fileURLWithPath:startingDirectory]];
+    }
     [openPanel setAllowedFileTypes:nil];
     if ([openPanel runModal]==NSFileHandlingPanelOKButton) {
         
